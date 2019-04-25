@@ -9,6 +9,8 @@ awscli
 flake8
 black
 isort
+jupyter
+nbconvert
 python-dotenv>=0.5.1
 {% if cookiecutter.python_interpreter != 'python3' %}
 
