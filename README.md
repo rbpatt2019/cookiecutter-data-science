@@ -2,6 +2,12 @@
 
 _A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
 
+Customised to a few of my preferences, including:
+
+1. Using setup.cfg over tox.ini
+1. Incorporating pytest into setup.py
+1. Requiring pytest-mypy for tests
+1. Using GPL3 as a license
 
 #### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
 
