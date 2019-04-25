@@ -8,6 +8,8 @@ Customised to a few of my preferences, including:
 1. Incorporating pytest into setup.py
 1. Requiring pytest-mypy for tests
 1. Using GPL3 as a license
+1. Adding black and isort to `make lint`
+1. Clearing default code in `make_dataset.py`
 
 #### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
 
