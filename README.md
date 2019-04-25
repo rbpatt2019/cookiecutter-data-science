@@ -6,7 +6,8 @@ Customised to a few of my preferences, including:
 
 1. Using setup.cfg over tox.ini
 1. Incorporating pytest into setup.py
-1. Requiring pytest-mypy for tests
+1. Requiring pytest-mypy and pytest-instafail for tests
+1. Move tests into a directory
 1. Using GPL3 as a license
 1. Adding black and isort to `make lint`
 1. Clearing default code in `make_dataset.py`
