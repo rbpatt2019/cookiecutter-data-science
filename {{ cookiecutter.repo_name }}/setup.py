@@ -1,4 +1,9 @@
 from setuptools import find_packages, setup
+import subprocess
+
+# Get current version number from git'
+__version__ = subprocess.check_output(['git', 'describe', '--abbrev=0']).strip()
+__version__ = str(__version__)[2:-1]
 
 setup(
     name='src',
