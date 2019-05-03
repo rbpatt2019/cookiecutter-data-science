@@ -29,15 +29,14 @@ requirements: test_environment
 data: requirements
 	$(PYTHON_INTERPRETER) src/data/make_dataset.py
 
-## Make presentation slides
-slides: notebooks/index.ipynb
-	jupyter nbconvert notebooks/index.ipynb --to slides --reveal-prefix="https://revealjs.com"
-	mv notebook/index.slides.html reports/index.html
-
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
+
+## Run tests 
+tests: requirements
+	$(PYTHON_INTERPRETER) setup.py test
 
 ## Lint using flake8
 lint:
