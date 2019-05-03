@@ -7,6 +7,7 @@
 After installing, be sure to initialise a git hub repo, because VCS is import for reproducibility!
 
 ```bash
+cd {{cookiecutter.project_name}}
 git init
 git add .
 git commit
