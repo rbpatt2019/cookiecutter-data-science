@@ -41,7 +41,7 @@ lint:
 	flake8 src
 
 ## Run tests 
-test: requirements lint
+test: lint
 	$(PYTHON_INTERPRETER) setup.py test
 
 ## Upload Data to S3

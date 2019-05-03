@@ -2,7 +2,7 @@
 
 {{cookiecutter.description}}
 
-## Usage
+## Getting Started
 
 After installing, be sure to initialise a git hub repo, because VCS is import for reproducibility!
 
@@ -13,6 +13,22 @@ git add .
 git commit
 git tag -a 0.1.0
 ```
+
+Then, create a new virtual environment for the project! If you use conda or virtualenv with virtualenvwrapper, you can run:
+
+```bash
+make create_environment
+```
+
+Otherwise, create a virtual environment according to your workflow. Once created, be sure to install the requirements. Run:
+
+```bash
+make requirements 
+```
+
+Now you are good to go! Run `make clean` to remove compiled files and `make lint` to int your files with black, isort, and flake8. Tests should be put in the tests directory and can be run with `make test` which lints your files then runs pytest with mypy and instafail.
+
+If you run `make data`, the script `make_dataset.py` will be run in the current environment. This is useful for reading your raw data into pandas, eg. 
 
 ## Project Organization
 
