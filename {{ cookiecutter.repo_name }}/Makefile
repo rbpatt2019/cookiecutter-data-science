@@ -34,15 +34,15 @@ clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-## Run tests 
-test: 
-	$(PYTHON_INTERPRETER) setup.py test
-
 ## Lint using flake8
 lint:
 	isort -rc src
 	black src
 	flake8 src
+
+## Run tests 
+test: requirements lint
+	$(PYTHON_INTERPRETER) setup.py test
 
 ## Upload Data to S3
 sync_data_to_s3:

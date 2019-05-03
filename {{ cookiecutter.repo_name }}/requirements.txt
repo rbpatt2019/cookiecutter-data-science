@@ -11,6 +11,9 @@ isort
 jupyter
 nbconvert
 python-dotenv>=0.5.1
+pytest
+pytest-instafail
+pytest-mypy
 {% if cookiecutter.python_interpreter != 'python3' %}
 
 # backwards compatibility
