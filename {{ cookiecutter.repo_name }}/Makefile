@@ -35,7 +35,7 @@ clean:
 	find . -type d -name "__pycache__" -delete
 
 ## Run tests 
-tests: requirements
+test: 
 	$(PYTHON_INTERPRETER) setup.py test
 
 ## Lint using flake8
