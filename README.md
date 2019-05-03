@@ -65,10 +65,11 @@ Otherwise, create a virtual environment according to your workflow. Once created
 make requirements 
 ```
 
+Be sure to update requirements.txt with `pip freeze > requirements.txt` as you develop your project!
+
 Now you are good to go! Run `make clean` to remove compiled files and `make lint` to int your files with black, isort, and flake8. Tests should be put in the tests directory and can be run with `make test` which lints your files then runs pytest with mypy and instafail.
 
 If you run `make data`, the script `make_dataset.py` will be run in the current environment. This is useful for reading your raw data into pandas, eg. 
-
 
 
 ### The resulting directory structure
