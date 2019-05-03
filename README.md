@@ -37,10 +37,14 @@ $ conda install cookiecutter
 ### To start a new project, run:
 ------------
 
-    cookiecutter gh:rbpatt2019/cookiecutter-data-science
-
-
-[![asciicast](https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02.png)](https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02)
+```bash
+$ cookiecutter gh:rbpatt2019/cookiecutter-data-science
+$ cd {{cookiecutter.project_name}} 
+$ git init
+$ git add .
+$ git commit
+$ git tag -a 0.1.0
+```
 
 
 ### The resulting directory structure
