@@ -1,10 +1,19 @@
-{{cookiecutter.project_name}}
-==============================
+# {{cookiecutter.project_name}}
 
 {{cookiecutter.description}}
 
-Project Organization
-------------
+## Usage
+
+After installing, be sure to initialise a git hub repo, because VCS is import for reproducibility!
+
+```bash
+git init
+git add .
+git commit
+git tag -a 0.1.0
+```
+
+## Project Organization
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
@@ -54,4 +63,4 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+<p><small>Project based on the <a target="_blank" href="https://github.com/rbpatt2019/cookiecutter-data-science">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
