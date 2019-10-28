@@ -1,79 +1,78 @@
 # Cookiecutter Data Science
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
-
-Customised to a few of my preferences, including:
-
-1. Using setup.cfg over tox.ini
-1. Incorporating pytest into setup.py
-1. Requiring pytest-mypy and pytest-instafail for tests
-1. Move tests into a directory
-1. Using GPL3 as a license
-1. Adding black and isort to `make lint`
-1. Adding `make test` command
-1. Clearing default code in `make_dataset.py`
+A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
 
 #### [Original CookieCutter](http://drivendata.github.io/cookiecutter-data-science/)
+
 #### [Project Repo](https://github.com/rbpatt2019/cookiecutter-data-science)
 
+You need  installed to complete the setup of this cookiecutter!
 
-### Requirements to use the cookiecutter template:
------------
- - Python 2.7 or >3.5
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
+## Requirements to use the cookiecutter template:
 
-``` bash
-$ pip install cookiecutter
+- Python >3.5
+- [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0.
+- [poetry](https://eustace.poetry.io)
+
+## Using the template
+
+When starting a new project, always create a new virtual environment. I use pyenv for all my env/venv control, so I would do:
+
+```sh
+pyenv virtualenv project_name
+pyenv virtualenv activate project_name
+pip install -U cookiecutter
 ```
 
-or
+Use whatever method is already part of your workflow. Now, we initialise the project:
 
-``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
+```sh
+cookiecutter https://github.com/rbpatt2019/cookiecutter-pip-click
 ```
 
+You'll be walked through some prompts to provide the necessary information. And, viola! Your project is set-up! 
 
-### Getting started:
-------------
+## Final Steps
 
-To begin a new project, call cookiecutter with the template name:
+Let's take a peek around. To do that, move into the directory and view it's contents.
 
-```bash
-$ cookiecutter gh:rbpatt2019/cookiecutter-data-science
+```sh
+cd project_name
+ls
 ```
 
-After creating your project, be sure to initialise a git hub repo, because VCS is import for reproducibility!
+Poetry uses a pyproject.toml for all of its settings, so let's look at that.
 
-```bash
-cd {{cookiecutter.project_name}}
-git init
-git add .
-git commit
-git tag -a 0.1.0
+```sh
+cat pyproject.toml
 ```
 
-Then, create a new virtual environment for the project! If you use conda or virtualenv with virtualenvwrapper, you can run:
+Here is where you can modify any settings for the package that you'd like to. The eagle-eyed among you might have noticed that pytest does not have its own section. Currently, pytest does not parse pyproject.toml for settings, so all options are manually passed to pytest in the Makefile.
 
-```bash
-make create_environment
+I think `make` is the greatest thing since sliced bread, so let's check that out.
+
+```sh
+cat Makefile
 ```
 
-Otherwise, create a virtual environment according to your workflow. Once created, be sure to install the requirements. Run:
+Some useful commands here to handle everything from linting to version control to packaging. Since we are going to be developing this tool, run:
 
-```bash
-make requirements 
+```sh
+make develop
 ```
 
-Be sure to update requirements.txt with `pip freeze > requirements.txt` as you develop your project!
+*DO THIS BEFORE ANYTHING ELSE*. I considered adding it to the post-generation hook, but elected not to. This was, you can create a venv however you want to, and I won't bork your python install if you forget to before creating a new project.
 
-Now you are good to go! Run `make clean` to remove compiled files and `make lint` to int your files with black, isort, and flake8. Tests should be put in the tests directory and can be run with `make test` which lints your files then runs pytest with mypy and instafail.
+Now, create a repo on git hub, and push your new project there.
 
-If you run `make data`, the script `make_dataset.py` will be run in the current environment. This is useful for reading your raw data into pandas, eg. 
+```sh
+git remote add origin https://github.com/YOUR_USER/project_name
+git push origin master
+```
 
+Happy coding!
 
-### The resulting directory structure
-------------
+## The resulting directory structure
 
 The directory structure of your new project looks like this: 
 
@@ -122,7 +121,7 @@ The directory structure of your new project looks like this:
 │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
 │       └── visualize.py
 │
-└── setup.cfg          <- Configuration for setup.py
+└── pyporiject.toml    <- Configuration for setup.py
 ```
 
 ## Contributing
