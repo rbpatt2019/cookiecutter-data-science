@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "cookiecutter-click-pip"
+name = "cookiecutter-data-science"
 version = "1.0.0"
-description = "A (hopefully) not too opinionated template for developing Click apps"
+description = "A (hopefully) not too opinionated template for good data science"
 authors = ["rbpatt2019 <ryan.patterson.2015@gmail.com>"]
 license = "GPL-3.0+"
 readme = "README.md"
-repository = "https://github.com/rbpatt2019/cookiecutter-click-pip"
+repository = "https://github.com/rbpatt2019/cookiecutter-data-science"
 
 [tool.poetry.dependencies]
 python = "^3.5"
